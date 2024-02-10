@@ -174,7 +174,11 @@ class _Page1State extends State<Page1> {
           //start exercises
           Expanded(
               child: Container(
-            decoration: BoxDecoration(color: Colors.grey[50]),
+            decoration: BoxDecoration(
+                color: Colors.grey[50],
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(16),
+                    topLeft: Radius.circular(16))),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
