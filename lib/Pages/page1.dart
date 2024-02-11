@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:temp1/Pages/Page2.dart';
 
 import '../Components/emojey.dart';
 import '../Components/exercises_list.dart';
@@ -17,8 +19,17 @@ class _Page1State extends State<Page1> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (value) {
+          setState(() {
+            Get.to(Page2());
+          });
+        },
+        currentIndex: 0,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.window), label: 'Any'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile')
         ],
@@ -170,6 +181,7 @@ class _Page1State extends State<Page1> {
               ],
             ),
           ),
+          //end emojies
 
           //start exercises
           Expanded(
